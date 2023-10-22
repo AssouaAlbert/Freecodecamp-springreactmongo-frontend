@@ -1,11 +1,18 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Hero from '../hero/Hero';
 
-function Home() {
+function Home({ movies }) {
+  console.log(movies);
   return (
     <div>
-      Welcome!
+      <Hero movies={movies} />
     </div>
-  )
+  );
 }
 
-export default Home
+Home.propTypes = {
+  movies: PropTypes.array.isRequired,
+};
+
+export default Home;
