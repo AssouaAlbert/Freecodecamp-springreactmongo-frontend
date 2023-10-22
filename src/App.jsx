@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import api from "./api/axiosConfig.js";
 
-import Layout from "./api/component/Layout.js";
+import Layout from "./api/component/Layout.jsx";
 
 import "./App.css";
+import Home from "./api/component/home/Home.jsx";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -12,6 +13,7 @@ function App() {
     try {
       const response = await api.get("/api/v1/movies");
       setMovies(response.data);
+      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -22,8 +24,9 @@ function App() {
   return (
     <div className="app">
       <Routes>
-        <Route path="/" element={<Layout/>}></Route>
-
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Home/>}/>
+        </Route>
       </Routes>
     </div>
   );
