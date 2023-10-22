@@ -1,6 +1,10 @@
-import "./App.css";
-import api from "./api/axiosConfig.js";
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import api from "./api/axiosConfig.js";
+
+import Layout from "./api/component/Layout.js";
+
+import "./App.css";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -15,7 +19,14 @@ function App() {
   useEffect(() => {
     getMovies();
   }, []);
-  return <></>;
+  return (
+    <div className="app">
+      <Routes>
+        <Route path="/" element={<Layout/>}></Route>
+
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
