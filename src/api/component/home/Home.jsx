@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Hero from '../hero/Hero';
 
 function Home({ movies }) {
-  console.log(movies);
   return (
     <div>
       <Hero movies={movies} />

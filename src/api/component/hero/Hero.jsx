@@ -12,7 +12,11 @@ const Hero = ({ movies }) => {
           return (
             <Paper key={index}>
               <div className='movie-card-container'>
-                <div className='movie-card'>
+                <div
+                  className='movie-card'
+                  style={{
+                   "background-image": `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(${movie.backdrops[0]})`}}
+                >
                   <div className='movie-detail'>
                     <div className='movie-poster'>
                       <img src={movie.poster} alt={movie.title} />
